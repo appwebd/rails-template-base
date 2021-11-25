@@ -1,0 +1,25 @@
+<%= container_begin %>
+<%= raw_row_col_begin %>
+
+<h2>Re-enviar instrucciones para desbloquear su cuenta</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.full_error :unlock_token %>
+
+  <div class="form-inputs">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Re-enviar instrucciones", class:'btn btn-primary' %>
+  </div>
+<% end %>
+<br>
+<%= render "devise/shared/links" %>
+
+<%= raw_row_col_end %>
+<%= container_end %>
