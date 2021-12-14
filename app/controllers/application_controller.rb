@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+    # this function is empty and is OK
   end
 
   private
